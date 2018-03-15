@@ -1,0 +1,40 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/function/function",
+    "pages/history/history"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#569597",
+    "navigationBarTitleText": "cuteCalculator",
+    "navigationBarTextStyle":"#fff"
+  },
+  "tabBar": {
+    "color": "#b7b7b7",
+    "selectedColor": "#569597",
+    "borderStyle": "#f5f5f5",
+    "backgroundColor": "#f5f5f5",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "image/simple.png",
+        "selectedIconPath": "image/simple-selected.png",
+        "text": "基本运算"
+      },
+      {
+        "pagePath": "pages/function/function",
+        "iconPath": "image/all.png",
+        "selectedIconPath": "image/all-selected.png",
+        "text": "更多功能"
+      },
+      {
+        "pagePath": "pages/history/history",
+        "iconPath": "image/history.png",
+        "selectedIconPath": "image/history-selected.png",
+        "text": "历史记录"
+      }
+    ]
+  }
+}
