@@ -1,0 +1,72 @@
+.content {
+  display: flex;
+  height: 100%;
+  flex-flow: row wrap;
+  font-family: "Microsoft YaHei";
+}
+
+.layout-top {
+  width: 100%;
+  align-self: flex-start;
+  text-align: right;
+  height:45%;
+  overflow:scroll;
+}
+
+.screen {
+  width: 100%;
+  font-size: 30px;
+  word-break: break-all;
+}
+
+.layout-bottom {
+  width: 100%;
+  height:55%;
+   align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+}
+
+.btnGroup {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  background-color: #f7f8f9;
+}
+
+.item {
+  text-align: center;
+  box-sizing: border-box;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #c3c6c7;
+}
+.item:not(:last-child){
+  border-right: 1px solid #c3c6c7;
+}
+.item:active {
+  background-color: #e3e4e5;
+}
+#btns2{
+  flex: 2;display: flex;flex-direction: row;
+}
+#items2-left{
+  width:75%;
+  display: flex;flex-direction: column;
+}
+.right{
+  font-size: 25px;
+  border-left: 1px solid #c3c6c7;
+}
+.items2-left-part{
+  display: flex; flex-direction: row;flex-grow: 1;
+}
+.orange{
+  color: #f78d1d;
+}
+page {
+  height: 100%;
+}

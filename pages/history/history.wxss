@@ -1,0 +1,35 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  width: 100%;
+}
+
+.item {
+  width: 95%;
+  margin-top: 3rpx;
+  margin-bottom: 3rpx;
+  padding: 0 15rpx;
+  border-radius: 3px;
+  background:#569597;
+  word-break: break-all;
+  line-height: 60rpx;
+  color: #fef4e9;
+}
+
+.clear {
+  margin: 10px 0;
+  font-size: 30rpx;
+  color: #66666a;
+}
+
+page {
+  height: 100%;
+}
