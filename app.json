@@ -19,20 +19,20 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "image/simple.png",
-        "selectedIconPath": "image/simple-selected.png",
+        "iconPath": "images/simple.png",
+        "selectedIconPath": "images/simple-selected.png",
         "text": "基本运算"
       },
       {
         "pagePath": "pages/function/function",
-        "iconPath": "image/all.png",
-        "selectedIconPath": "image/all-selected.png",
+        "iconPath": "images/all.png",
+        "selectedIconPath": "images/all-selected.png",
         "text": "更多功能"
       },
       {
         "pagePath": "pages/history/history",
-        "iconPath": "image/history.png",
-        "selectedIconPath": "image/history-selected.png",
+        "iconPath": "images/history.png",
+        "selectedIconPath": "images/history-selected.png",
         "text": "历史记录"
       }
     ]
