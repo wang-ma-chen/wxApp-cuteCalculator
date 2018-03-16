@@ -1,20 +1,18 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs",
     "pages/function/function",
     "pages/history/history"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#569597",
-    "navigationBarTitleText": "cuteCalculator",
+    "navigationBarTitleText": "CuteCalculator",
     "navigationBarTextStyle":"#fff"
   },
   "tabBar": {
     "color": "#b7b7b7",
     "selectedColor": "#569597",
-    "borderStyle": "#f5f5f5",
     "backgroundColor": "#f5f5f5",
     "list": [
       {

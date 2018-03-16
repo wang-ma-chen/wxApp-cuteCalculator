@@ -1,13 +1,16 @@
 <view class="content">
   <view class="layout-top">
-    <text class="screen">
-      {{screenData}}
-    </text>
+    <view class="screen">
+      <view class='doneData' wx:for="{{done}}" wx:for-item="item">
+        {{item}}
+      </view>
+      <view class="screenData">{{screenData}}</view>
+    </view>
   </view>
   <view class="layout-bottom">
     <view class="btnGroup">
-      <view class="item orange" bindtap="clickBtn" id="{{idc}}">AС</view>
-      <view class="item" bindtap="clickBtn" id="{{idc}}">DEL</view>
+      <view class="item orange" bindtap="clickBtn" id="{{idc}}">清空</view>
+      <view class="item" bindtap="clickBtn" id="{{idd}}">DEL</view>
       <view class="item" bindtap="clickBtn" id="{{iddiv}}">÷</view>
       <view class="item" bindtap="clickBtn" id="{{idx}}">×</view>
     </view>

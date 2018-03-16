@@ -1,0 +1,115 @@
+<view class="swiper-tab">  
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">生活</view>  
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">尺码</view>  
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">财务</view> 
+    <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">健康</view>  
+</view>  
+  
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">  
+    <swiper-item>  
+      <view class="part">
+        <view class="fct left">
+          <navigator url="#">
+            <image src="/images/calendar.png"></image>
+            <view>日期间隔计算</view>
+          </navigator>
+        </view> 
+        <view class="fct right">
+          <navigator url="details/details">
+            <image src="/images/q.png"></image>
+            <view>公历农历转换</view>
+          </navigator>
+        </view> 
+      </view>
+      <view class="part">
+        <view class="fct left">
+          <navigator url="details/details">
+            <image src="/images/book.png"></image>
+            <view>生辰八字查询</view>
+          </navigator>
+        </view> 
+        <view class="fct right">
+          <navigator url="details/details">
+            <image src="/images/computer.png"></image>
+            <view>进制转换</view>
+          </navigator>
+        </view>  
+      </view>
+    </swiper-item> 
+
+
+    <swiper-item>  
+      <view class="part">
+        <view class="fct left">
+          <navigator url="details/details">
+            <image src="/images/shoe.png"></image>
+            <view>鞋码</view>
+          </navigator>
+        </view> 
+        <view class="fct right">
+          <navigator url="details/details">
+            <image src="/images/dress.png"></image>
+            <view>女装尺码</view>
+          </navigator>
+        </view> 
+      </view>
+      <view class="part">
+        <view class="fct left">
+          <navigator url="details/details">
+            <image src="/images/skirt.png"></image>
+            <view>男装尺码</view>
+          </navigator>
+        </view> 
+        <view class="fct right">
+          <navigator url="details/details">
+            <image src="/images/ring.png"></image>
+            <view>戒指尺码</view>
+          </navigator>
+        </view>  
+      </view>
+    </swiper-item> 
+
+
+    <swiper-item>  
+      <view class="part">
+        <view class="fct left">
+          <navigator url="details/details">
+            <image src="/images/house.png"></image>
+            <view>房贷计算</view>
+          </navigator>
+        </view> 
+        <view class="fct right">
+          <navigator url="details/details">
+            <image src="/images/tax.png"></image>
+            <view>个人所得税</view>
+          </navigator>
+        </view> 
+      </view>
+      <view class="part">
+        <view class="fct left">
+          <navigator url="details/details">
+            <image src="/images/money.png"></image>
+            <view>金额大写</view>
+          </navigator>
+        </view>   
+      </view> 
+    </swiper-item>
+
+
+    <swiper-item>  
+      <view class="part">
+        <view class="fct left">
+          <navigator url="details/details">
+            <image src="/images/weight.png"></image>
+            <view>体重BMI</view>
+          </navigator>
+        </view> 
+        <view class="fct right">
+          <navigator url="details/details">
+            <image src="/images/people.png"></image>
+            <view>基础代谢率</view>
+          </navigator>
+        </view> 
+      </view>
+    </swiper-item>   
+</swiper>  

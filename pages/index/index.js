@@ -22,15 +22,28 @@ Page({
     content: "",
     screenData: "0",
     operaSymbo: { "＋": "+", "-": "-", "×": "*", "÷": "/", ".": "." },
+    done:[],
     lastIsOperaSymbo: false,
+    complete:false,
     arr: [],
-    logs: []
+    logs: [],
   },
   onLoad: function (options) {
-    // 页面初始化 options为页面跳转所带来的参数
+    var that = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        that.setData({ scrollHeight: res.windowHeight-45 });
+      }
+    });  
   },
   onReady: function () {
     // 页面渲染完成
+    var that = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        that.setData({ scrollHeight: res.windowHeight-45 });
+      }
+    });  
   },
   onShow: function () {
     // 页面显示
@@ -57,11 +70,13 @@ Page({
     } 
     else if (id == this.data.idc) {  //清屏C
       this.setData({ "screenData": "0" });
+      this.setData({ "done": [] });
       this.data.arr.length = 0;
+      this.data.done.length=0;
     } 
     else if (id == this.data.ide) {  //等于＝
-      var data = this.data.screenData; 
-      if (data == "0") {
+      var data = this.data.screenData; console.log(data);
+      if (data == "0" ||this.data.lastIsOperaSymbo) {
         return;
       }
       var lastWord = data.charAt(data.length);
@@ -106,7 +121,13 @@ Page({
       wx.setStorageSync("calclogs", this.data.logs);
       this.data.arr.length = 0;
       this.data.arr.push(result);
-      this.setData({ "screenData": data + '=\n' + result + "" }); 
+      this.data.done.push(data + "=" + result);
+      if(this.data.done.length>4){
+        this.data.done.shift();
+      }
+      this.setData({ "screenData": result + "" }); 
+      this.setData({"done":this.data.done});
+      this.setData({ "complete": true });
     } 
     else {
       if (this.data.operaSymbo[id]||id=="%") { //如果是符号+-*/
@@ -116,7 +137,7 @@ Page({
       }
       var sd = this.data.screenData;
       var data;
-      if (id =="×"||id=="/"||id=="."||id=="%"||sd!="0") {
+      if (id == "×" || id =="÷"||id=="."||id=="%"||sd!="0") {
         data = sd + id;
       } 
       else {

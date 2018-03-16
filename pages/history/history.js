@@ -1,6 +1,7 @@
 Page({
   data: {
-    logs: []
+    logs: [],
+    
   },
   clear: function () {
     wx.showModal({
