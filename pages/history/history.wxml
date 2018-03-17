@@ -1,8 +1,14 @@
 <view class="content">
   <view class='container'>
-    <block wx:for="{{logs}}" wx:for-item="log">
-      <view class="item">{{log}}</view>
+    <block wx:for="{{calclogs}}" wx:for-item="calclog">
+      <view class="item">{{calclog}}</view>
+    </block>
+     <block wx:for="{{interlogs}}" wx:for-item="interlog">
+      <view class="item">{{interlog}}</view>
+    </block>
+    <block wx:for="{{calenlogs}}" wx:for-item="calenlog">
+      <view class="item">{{calenlog}}</view>
     </block>
   </view>
-  <view class='clear' wx:if="{{logs.length>0}}" bindtap='clear'>清除历史记录</view>
+  <view class='clear' wx:if="{{calclogs.length>0||interlogs.length>0||calenlogs.length>0}}" bindtap='clear'>清除历史记录</view>
 </view>

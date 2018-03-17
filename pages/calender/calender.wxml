@@ -1,0 +1,20 @@
+<view class="container">
+  <view class="page__hd">
+    <text class="page__title">请选择...</text>
+  </view>
+  <view class="page_body">
+    <view class="section">
+      <view class="picker" bindtap="showDatePickerPlus">当前选择：{{dateType}}   {{date}}<image src="/images/more.png"></image></view>
+    </view>
+    <view class="section result">
+     <view wx:if="{{cvt_date!=NAN&&dateType=='公历'}}">
+      对应农历日期为：{{cvt_date}}
+     </view>
+     <view wx:if="{{cvt_date!=NAN&&dateType=='农历'}}">
+      对应公历日期为：{{cvt_date}}
+     </view>
+    </view>
+    <view class="cvtBtn" bindtap="convert">转换</view>
+    <datepicker-plus bind:submit='submit' showDatePickerPlus='{{show}}'></datepicker-plus>
+  </view>
+</view>

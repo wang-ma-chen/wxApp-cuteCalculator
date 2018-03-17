@@ -2,7 +2,9 @@
   "pages":[
     "pages/index/index",
     "pages/function/function",
-    "pages/history/history"
+    "pages/history/history",
+    "pages/interval/interval",
+    "pages/calender/calender"
   ],
   "window":{
     "backgroundTextStyle":"light",

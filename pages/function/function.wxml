@@ -9,13 +9,13 @@
     <swiper-item>  
       <view class="part">
         <view class="fct left">
-          <navigator url="#">
+          <navigator url="../interval/interval">
             <image src="/images/calendar.png"></image>
             <view>日期间隔计算</view>
           </navigator>
         </view> 
         <view class="fct right">
-          <navigator url="details/details">
+          <navigator url="../calender/calender">
             <image src="/images/q.png"></image>
             <view>公历农历转换</view>
           </navigator>
@@ -56,11 +56,19 @@
       <view class="part">
         <view class="fct left">
           <navigator url="details/details">
+            <image src="/images/bra.png"></image>
+            <view>文胸尺码</view>
+          </navigator>
+        </view> 
+        <view class="fct right">
+          <navigator url="details/details">
             <image src="/images/skirt.png"></image>
             <view>男装尺码</view>
           </navigator>
         </view> 
-        <view class="fct right">
+      </view>
+      <view class="part">
+        <view class="fct left">
           <navigator url="details/details">
             <image src="/images/ring.png"></image>
             <view>戒指尺码</view>

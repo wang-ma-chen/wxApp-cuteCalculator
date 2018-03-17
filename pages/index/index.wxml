@@ -1,7 +1,7 @@
 <view class="content">
   <view class="layout-top">
     <view class="screen">
-      <view class='doneData' wx:for="{{done}}" wx:for-item="item">
+      <view class='doneData' wx:for="{{done}}" wx:key="key" wx:for-item="item">
         {{item}}
       </view>
       <view class="screenData">{{screenData}}</view>

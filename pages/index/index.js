@@ -29,21 +29,9 @@ Page({
     logs: [],
   },
   onLoad: function (options) {
-    var that = this;
-    wx.getSystemInfo({
-      success: function (res) {
-        that.setData({ scrollHeight: res.windowHeight-45 });
-      }
-    });  
   },
   onReady: function () {
     // 页面渲染完成
-    var that = this;
-    wx.getSystemInfo({
-      success: function (res) {
-        that.setData({ scrollHeight: res.windowHeight-45 });
-      }
-    });  
   },
   onShow: function () {
     // 页面显示
@@ -75,7 +63,7 @@ Page({
       this.data.done.length=0;
     } 
     else if (id == this.data.ide) {  //等于＝
-      var data = this.data.screenData; console.log(data);
+      var data = this.data.screenData; 
       if (data == "0" ||this.data.lastIsOperaSymbo) {
         return;
       }
@@ -115,6 +103,9 @@ Page({
             result /= Number(optarr[i + 1]);
           }
         }
+      }
+      if ((result + "").split('.')[1]!=undefined){
+        result = result.toFixed(2);
       }
       //存储历史记录
       this.data.logs.push(data + '=' + result);

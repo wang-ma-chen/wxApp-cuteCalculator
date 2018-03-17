@@ -49,10 +49,5 @@ Page({
         currentTab: e.target.dataset.current
       })
     }
-  },
-  toast: function () {
-    wx.navigateTo({
-      url: '../blueberry/blueberry'
-    })
   }
 })  

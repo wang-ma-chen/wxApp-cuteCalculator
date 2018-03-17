@@ -1,7 +1,7 @@
 Page({
   data: {
-    logs: [],
-    
+    calclogs: [], 
+    interlogs:[],
   },
   clear: function () {
     wx.showModal({
@@ -11,7 +11,11 @@ Page({
       success: (res) => {
         if (res.confirm) {
           wx.removeStorageSync('calclogs');
-          this.setData({ "logs": [] });
+          wx.removeStorageSync('interlogs');
+          wx.removeStorageSync('calenlogs');
+          this.setData({ "calclogs": [] ,
+            "interlogs": [], 
+            "calenlogs": [],});
         } else if (res.cancel) {
 
         }
@@ -20,15 +24,18 @@ Page({
   },
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
-    var logs = wx.getStorageSync('calclogs');
-    this.setData({ "logs": logs });
-    console.log(this.data.logs);
   },
   onReady: function () {
     // 页面渲染完成
   },
   onShow: function () {
     // 页面显示
+    var calclogs = wx.getStorageSync('calclogs');
+    var interlogs=wx.getStorageSync('interlogs');
+    var calenlogs = wx.getStorageSync('calenlogs');
+    this.setData({ "calclogs": calclogs });
+    this.setData({ "interlogs": interlogs });
+    this.setData({ "calenlogs": calenlogs });
   },
   onHide: function () {
     // 页面隐藏

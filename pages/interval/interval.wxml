@@ -1,0 +1,33 @@
+<view class="container">
+  <view class="page__hd">
+    <text class="page__title">请选择...</text>
+  </view>
+  <view class="page_body">
+    <view class="section">
+      <view class="section__title">开始时间</view>
+      <view class="picker" bindtap="showDatePicker1" >当前选择：{{date1}}<image src="/images/more.png"></image></view>
+    </view>
+    <view class="section">
+      <view class="section__title">结束时间</view>
+      <view class="picker" bindtap="showDatePicker2" >当前选择：{{date2}}<image src="/images/more.png"></image></view>
+    </view>
+    <view class="section result">
+     <view wx:if="{{day_num!=NAN}}">
+      开始时间到结束时间之间的天数为：{{day_num}}天
+     </view>
+    </view>
+    <view class="startCal" bindtap="process">计算</view>
+    <date-picker
+      id="date-picker"
+      value="{{datePickerValue1}}" 
+      isShow="{{datePickerIsShow1}}"
+      bindsureclick="datePickerOnSureClick1"
+      bindcancelclick="datePickerOnCancelClick1" />
+    <date-picker
+      id="date-picker"
+      value="{{datePickerValue2}}" 
+      isShow="{{datePickerIsShow2}}"
+      bindsureclick="datePickerOnSureClick2"
+      bindcancelclick="datePickerOnCancelClick2" />
+  </view>
+</view>
