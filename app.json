@@ -4,7 +4,9 @@
     "pages/function/function",
     "pages/history/history",
     "pages/interval/interval",
-    "pages/calender/calender"
+    "pages/calender/calender",
+    "pages/birthdayr/birthday",
+    "pages/yuanjiaofen/yuanjiaofen"
   ],
   "window":{
     "backgroundTextStyle":"light",

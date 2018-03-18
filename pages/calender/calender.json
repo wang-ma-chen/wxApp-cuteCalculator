@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "农历转换",
+  "navigationBarTitleText": "公历农历转换",
   "backgroundColor": "#F5F5F5",
   "backgroundTextStyle": "dark",
   "usingComponents": {

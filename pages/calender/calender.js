@@ -34,8 +34,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if (wx.getStorageSync('calenlogs') != '') {
-      this.setData({ logs: wx.getStorageSync('calenlogs') }, );
+    if (wx.getStorageSync('logs') != '') {
+      this.setData({ logs: wx.getStorageSync('logs') }, );
     }
   },
 
@@ -74,7 +74,6 @@ Page({
 
   },
   submit: function (e) {
-    console.log(e.detail);
     if (e.detail.dateType=='公历'){
       this.setData({
         date: `${e.detail.dateYear}年${e.detail.dateMonth}月${e.detail.dateDay}日`,
@@ -131,8 +130,8 @@ Page({
           case 8: lunar.lunarMonth= "八月"; break;
           case 9: lunar.lunarMonth= "九月"; break;
           case 10:lunar.lunarMonth= "十月"; break;
-          case 11: lunar.lunarMonth="十一月"; break;
-          case 12: lunar.lunarMonth ="十二月"; break;
+          case 11: lunar.lunarMonth="冬月"; break;
+          case 12: lunar.lunarMonth ="腊月"; break;
       }
       switch(lunar.lunarDay){
         case 1:lunar.lunarDay="初一";break;
@@ -178,6 +177,6 @@ Page({
      this.setData({ cvt_date:`${solar.solarYear}年${solar.solarMonth}月${solar.solarDay}日`})
    }
    this.data.logs.push(this.data.date+">>"+this.data.cvt_date);
-   wx.setStorageSync("calenlogs",this.data.logs);
+   wx.setStorageSync("logs",this.data.logs);
  }
 })

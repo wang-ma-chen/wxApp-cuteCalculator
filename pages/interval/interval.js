@@ -35,8 +35,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if (wx.getStorageSync('interlogs')!=''){
-    this.setData({ logs :wx.getStorageSync('interlogs')},);}
+    var logs = wx.getStorageSync('logs') || [];
+    this.setData({"logs":logs});
   },
 
   /**
@@ -124,6 +124,6 @@ Page({
       day_num:day_num,
     });
     this.data.logs.push(this.data.date1 + "--" + this.data.date2 +"  "+day_num+"天");
-    wx.setStorageSync("interlogs", this.data.logs);
+    wx.setStorageSync("logs", this.data.logs);
   }
 })

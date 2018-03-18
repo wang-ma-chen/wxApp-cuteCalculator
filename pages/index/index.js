@@ -23,18 +23,21 @@ Page({
     screenData: "0",
     operaSymbo: { "＋": "+", "-": "-", "×": "*", "÷": "/", ".": "." },
     done:[],
+    flag:false,
     lastIsOperaSymbo: false,
     complete:false,
     arr: [],
-    logs: [],
+    curIndex: 0,
   },
   onLoad: function (options) {
   },
   onReady: function () {
+    
     // 页面渲染完成
   },
   onShow: function () {
-    // 页面显示
+    var logs = wx.getStorageSync('logs') || [];
+    this.setData({ "logs": logs });
   },
   onHide: function () {
     // 页面隐藏
@@ -109,7 +112,8 @@ Page({
       }
       //存储历史记录
       this.data.logs.push(data + '=' + result);
-      wx.setStorageSync("calclogs", this.data.logs);
+      wx.setStorageSync("logs", this.data.logs);
+      console.log(this.data.logs);
       this.data.arr.length = 0;
       this.data.arr.push(result);
       this.data.done.push(data + "=" + result);

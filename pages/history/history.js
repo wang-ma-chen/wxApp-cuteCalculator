@@ -1,7 +1,6 @@
 Page({
   data: {
-    calclogs: [], 
-    interlogs:[],
+    logs: [], 
   },
   clear: function () {
     wx.showModal({
@@ -10,12 +9,8 @@ Page({
       confirmColor: '#29bbb4',
       success: (res) => {
         if (res.confirm) {
-          wx.removeStorageSync('calclogs');
-          wx.removeStorageSync('interlogs');
-          wx.removeStorageSync('calenlogs');
-          this.setData({ "calclogs": [] ,
-            "interlogs": [], 
-            "calenlogs": [],});
+          wx.removeStorageSync('logs');
+          this.setData({ "logs": [] ,});
         } else if (res.cancel) {
 
         }
@@ -30,12 +25,8 @@ Page({
   },
   onShow: function () {
     // 页面显示
-    var calclogs = wx.getStorageSync('calclogs');
-    var interlogs=wx.getStorageSync('interlogs');
-    var calenlogs = wx.getStorageSync('calenlogs');
-    this.setData({ "calclogs": calclogs });
-    this.setData({ "interlogs": interlogs });
-    this.setData({ "calenlogs": calenlogs });
+    var logs = wx.getStorageSync('logs');
+    this.setData({ "logs": logs });
   },
   onHide: function () {
     // 页面隐藏
