@@ -66,7 +66,7 @@
 <swiper-item>  
       <view class="part">
         <view class="fct left">
-          <navigator url="details/details">
+          <navigator url="../shoe/shoe">
             <image src="/images/shoe.png"></image>
             <view>鞋码</view>
           </navigator>
@@ -94,7 +94,7 @@
       </view>
       <view class="part">
         <view class="fct left">
-          <navigator url="details/details">
+          <navigator url="../ringsize/ringsize">
             <image src="/images/ring.png"></image>
             <view>戒指尺码</view>
           </navigator>

@@ -1,0 +1,18 @@
+<!--pages/shoe/shoe.wxml-->
+<view class='container'>
+    <view class="page__hd">
+      <text class="page__title">请选择...</text>
+    </view>
+    <view class="page_body">
+      <view class="section">
+        <view class="section__title">鞋类</view>
+        <picker value="{{shoeTypePickerValue}}" range="{{shoeTypeList}}" isShow="{  {shoeTypePickerIsShow}}" bindchange="shoeTypePickerOnSureClick" bindtouchcancel="shoeTypePickerOnCancelClick">
+          <view class="picker">
+            当前选择：{{shoeTypeList[shoeTypePickerValue]}}
+            <image  src="/images/more.png"></image>
+          </view>
+        </picker>
+      </view>
+      
+    </view>
+</view>

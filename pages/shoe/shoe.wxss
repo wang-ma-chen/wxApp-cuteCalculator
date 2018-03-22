@@ -1,0 +1,77 @@
+/* pages/shoe/shoe.wxss */
+page {
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  font-size: 30rpx;
+}
+.container{
+  height: 100%;
+}
+.page__hd{
+    height:10%;
+    width: 100%;
+    text-align: center;
+}
+.page_body{
+  display: flex;
+  flex-direction: column;
+  height:90%;
+  width: 100%;
+}
+.page__title{
+    display: inline-block;
+    padding: 30rpx 60rpx 10rpx 60rpx;
+    font-size: 30rpx;
+    color: #777777;
+    border-bottom: 1px solid  #777777;
+}
+ .section{
+    width: 100%;
+}
+.radio-group{
+  background-color: #536;
+  text-align: center
+}
+.radio{
+  background-color: #569597;
+}
+ .section__title{
+    background-color:#569597; 
+    color:white;
+    text-align: center;
+    border-radius: 3px;
+    margin: 0 2px 16rpx 2px;
+    padding: 5px 30rpx;
+}  
+.input{
+  border-radius: 3px;
+  margin: 0 2px 0 2px;
+  padding: 26rpx;
+  background-color: #f5f5f5;
+  border:#569597 solid 1px;
+}
+image{
+  float: right;
+  height: 20px;
+  width: 20px;
+}
+
+.result{
+  flex: 2;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 40rpx;
+}
+.startCal{
+  align-self: flex-end;
+  width: 90%;
+  color: white;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  margin:30rpx auto; 
+  border-radius: 6rpx;
+  background-color:#569597; 
+  box-sizing: border-box;
+}
