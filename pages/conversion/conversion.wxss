@@ -1,0 +1,60 @@
+/* pages/conversion/conversion.wxss */
+page {
+  height: 100%;
+  width: 100%;
+  background-color: #eee; 
+  font-size: 30rpx;
+}
+
+.wrapper{
+  width: 100%;
+  height: 100%;
+}
+
+.page__hd{
+    height:10%;
+    width: 100%;
+    text-align: center;
+}
+
+.page__title{
+    display: inline-block;
+    padding: 30rpx 60rpx 10rpx 60rpx;
+    font-size: 30rpx;
+    color: #777777;
+    border-bottom: 1px solid  #777777;
+}
+
+.page__body{
+  display: flex;
+  flex-direction: column;
+  height:90%;
+  width: 100%;
+}
+.forinput{
+  background-color: white;
+  box-shadow: 4rpx 4rpx 4rpx #ccc;
+  margin:10rpx 8rpx 10rpx 8rpx;
+  padding: 26rpx 2rpx 26rpx 2rpx;
+  border-radius: 3px;
+}
+.wtf{
+  display: inline-block;
+  position: absolute;
+  bottom: 300rpx;
+  width: 40%;
+  color: white;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 6rpx;
+  background-color:#569597; 
+  box-sizing: border-box;
+}
+.left{
+  left:5%;
+}
+.right{
+  right:5%;
+}
+

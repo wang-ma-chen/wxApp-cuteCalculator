@@ -1,0 +1,25 @@
+<!--pages/brasize/brasize.wxml-->
+<!-- <text>pages/brasize/brasize.wxml</text> -->
+<view class='container'>
+    <view class="page__hd">
+      <text class="page__title">请输入...</text>
+    </view>
+    <view class="page_body">
+    <view class="section">
+      <view class="section__title">上胸围（cm）</view>
+      <input class="input" type='digit' confirm-type='done'  placeholder='请在此处输入上胸围' bindblur='getUpper'>
+      </input>
+    </view>
+    <view class="section">
+      <view class="section__title">下胸围（cm）</view>
+      <input class="input" type='digit' confirm-type='done' adjust-position='true' placeholder='请在此处输入下胸围' bindblur='getLower'>
+      </input>
+    </view>
+    <view class="section result">
+     <view wx:if="{{braSize!=null}}">
+      文胸尺码为：{{braSize}}
+     </view>
+    </view>
+    <view class="startCal" bindtap="process">计算</view>
+  </view>
+</view>

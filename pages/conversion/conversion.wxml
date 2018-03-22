@@ -1,0 +1,26 @@
+<!--pages/conversion/conversion.wxml-->
+<!-- <text>pages/conversion/conversion.wxml</text> -->
+<view class='wrapper'>
+
+  <view class='page__hd'>
+    <text class="page__title">请输入...</text>
+  </view>
+
+  <view class='page__body'>
+    <view class='input'> 
+     <input class='forinput' bindinput="KeyInput" type="number" id='10' confirm-type="done" value='{{decimal}}' placeholder="这里输入10进制数" focus/>
+    </view>
+    <view class='input'>
+      <input class='forinput' bindinput="KeyInput" type="number" id='2' confirm-type="done" value='{{twoadecimal}}' placeholder="这里输入2进制数" />
+    </view>
+    <view class='input'>
+      <input class='forinput' bindinput="KeyInput" type="number" id='8' confirm-type="done" value='{{eightadecimal}}' placeholder="这里输入8进制数" />
+    </view>
+    <view class='input'>
+      <input class='forinput' bindinput="KeyInput" type="text" id='16' confirm-type="done" value='{{hexadecimal}}' placeholder="这里输入16进制数" />
+    </view>
+    <view class="wtf left" bindtap='emptied' >清空</view> 
+    <view class="wtf right" bindtap='save' >保存</view> 
+  </view>
+
+</view>

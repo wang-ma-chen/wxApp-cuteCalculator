@@ -10,7 +10,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.9.91",
 	"appid": "wx0a4158ef8b7bb3e7",
-	"projectname": "cuteCalculator",
+	"projectname": "CuteCalculator",
 	"isGameTourist": false,
 	"condition": {
 		"search": {
@@ -21,13 +21,24 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
 			"current": -1,
-			"list": []
+			"list": [
+				{
+					"id": -1,
+					"name": "进制",
+					"pathName": "pages/conversion/conversion",
+					"query": ""
+				}
+			]
 		}
 	}
 }

@@ -13,7 +13,7 @@
   
 .swiper-box{ display: block; height: 100%; width: 100%; overflow: hidden; }  
 .part{
-  height:30%;
+  height:28%;
   display: flex;
   flex-direction: row;
 } 
