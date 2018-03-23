@@ -1,18 +1,130 @@
 <!--pages/shoe/shoe.wxml-->
 <view class='container'>
+
     <view class="page__hd">
       <text class="page__title">请选择...</text>
     </view>
+
     <view class="page_body">
-      <view class="section">
-        <view class="section__title">鞋类</view>
-        <picker value="{{shoeTypePickerValue}}" range="{{shoeTypeList}}" isShow="{  {shoeTypePickerIsShow}}" bindchange="shoeTypePickerOnSureClick" bindtouchcancel="shoeTypePickerOnCancelClick">
+      <view class="section__title">鞋类</view>
+      <picker value="{{shoeTypePickerValue}}" range="{{shoeTypeList}}" isShow="{{shoeTypePickerIsShow}}" bindchange="shoeTypePickerOnSureClick" bindtouchcancel="shoeTypePickerOnCancelClick">
+        <view class="picker">
+          当前选择：{{shoeTypeList[shoeTypePickerValue]}}
+          <image  src="/images/more.png"></image>
+        </view>
+      </picker>
+
+      <view class="section__title">尺码换算</view>
+      <picker value="{{inputPickerValue}}" range="{{shoeTypePickerValue == 0?lengthList_male:lengthList_female}}" isShow="{{lengthPickerIsShow}}" bindchange="keyInput" bindtouchcancel="inputCancel" id='0'>
+        <view wx:if="{{shoeTypePickerValue == NaN}}">
           <view class="picker">
-            当前选择：{{shoeTypeList[shoeTypePickerValue]}}
+            脚长：
             <image  src="/images/more.png"></image>
+          </view>
+        </view>
+        <view wx:if="{{shoeTypePickerValue == 0}}">
+          <view class="picker">
+            脚长：{{lengthList_male[inputPickerValue]}}
+          <image  src="/images/more.png"></image>
+          </view>
+        </view>
+        <view wx:if="{{shoeTypePickerValue == 1}}">
+          <view class="picker">
+            脚长：{{lengthList_male[inputPickerValue]}}
+            <image  src="/images/more.png"></image>
+          </view>
+        </view>
+      </picker>
+
+      <view class='halfpicker_container'>
+
+        <picker value="{{inputPickerValue}}" range="{{shoeTypePickerValue == 0?chinaTypeList_male:chinaTypeList_female}}" isShow="{{chinaPickerIsShow}}" bindchange="keyInput" bindtouchcancel="inputCancel" class='halfpicker' id='1'>
+          <view wx:if="{{shoeTypePickerValue == NaN}}">
+            <view class="picker">
+              中国：
+              <image  src="/images/more.png"></image>
+            </view>
+          </view>
+          <view wx:if="{{shoeTypePickerValue == 0}}">
+            <view class="picker">
+              中国：{{chinaTypeList_male[inputPickerValue]}}
+              <image  src="/images/more.png"></image>
+            </view>
+          </view>
+          <view wx:if="{{shoeTypePickerValue == 1}}">
+            <view class="picker">
+              中国：{{chinaTypeList_female[inputPickerValue]}}
+              <image  src="/images/more.png"></image>
+            </view>
+          </view>
+        </picker>
+
+        <picker value="{{inputPickerValue}}" range="{{shoeTypePickerValue == 0?europeTypeList_male:europeTypeList_female}}" isShow="{  {europePickerIsShow}}" bindchange="keyInput" bindtouchcancel="inputCancel" class='halfpicker' id='2'>
+
+          <view wx:if="{{shoeTypePickerValue == NaN}}">
+            <view class="picker">
+              欧洲：
+              <image  src="/images/more.png"></image>
+            </view>
+          </view>
+          <view wx:if="{{shoeTypePickerValue == 0}}">
+            <view class="picker">
+              欧洲：{{europeTypeList_male[inputPickerValue]}}
+              <image  src="/images/more.png"></image>
+            </view>
+          </view>
+          <view wx:if="{{shoeTypePickerValue == 1}}">
+            <view class="picker">
+              欧洲：{{europeTypeList_female[inputPickerValue]}}
+              <image  src="/images/more.png"></image>
+            </view>
+          </view>
+        </picker>
+
+      </view>
+      <view class='halfpicker_container'>
+
+        <picker value="{{inputPickerValue}}" range="{{shoeTypePickerValue == 0?ukTypeList_male:ukTypeList_female}}" isShow="{  {ukPickerIsShow}}" bindchange="keyInput" bindtouchcancel="inputCancel" class='halfpicker' id='3'>
+          <view wx:if="{{shoeTypePickerValue == NaN}}">
+            <view class="picker">
+              英国：
+              <image  src="/images/more.png"></image>
+            </view>
+          </view>
+          <view wx:if="{{shoeTypePickerValue == 0}}">
+            <view class="picker">
+              英国：{{ukTypeList_male[inputPickerValue]}}
+              <image  src="/images/more.png"></image>
+            </view>
+          </view>
+          <view wx:if="{{shoeTypePickerValue == 1}}">
+            <view class="picker">
+              英国：{{ukTypeList_female[inputPickerValue]}}
+              <image  src="/images/more.png"></image>
+            </view>
+          </view>
+        </picker>
+
+        <picker value="{{inputPickerValue}}" range="{{shoeTypePickerValue == 0?usaTypeList_male:usaTypeList_female}}" isShow="{{usaPickerIsShow}}" bindchange="keyInput" bindtouchcancel="inputCancel" class='halfpicker' id='4'>
+          <view wx:if="{{shoeTypePickerValue == NaN}}">
+            <view class="picker">
+              美国：
+              <image  src="/images/more.png"></image>
+            </view>
+          </view>
+          <view wx:if="{{shoeTypePickerValue == 0}}">
+            <view class="picker">
+              美国：{{usaTypeList_male[inputPickerValue]}}
+              <image  src="/images/more.png"></image>
+            </view>
+          </view>
+          <view wx:if="{{shoeTypePickerValue == 1}}">
+            <view class="picker">
+              美国：{{usaTypeList_female[inputPickerValue]}}
+              <image  src="/images/more.png"></image>
+            </view>
           </view>
         </picker>
       </view>
-      
     </view>
 </view>
