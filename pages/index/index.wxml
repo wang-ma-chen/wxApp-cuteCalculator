@@ -1,5 +1,8 @@
 <view class="content">
   <view class="layout-top">
+    <view class="icon">
+      <image bindtap="change"src="/images/exchange.png"></image>
+    </view>
     <view class="screen">
       <view class='doneData' wx:for="{{done}}" wx:key="key" wx:for-item="item">
         {{item}}
@@ -8,6 +11,12 @@
     </view>
   </view>
   <view class="layout-bottom">
+    <view wx:if="{{mode==2}}" class="btnGroup">
+      <view class="item" bindtap="clickBtn" id="{{idln}}">ln</view>
+      <view class="item" bindtap="clickBtn" id="{{idsin}}">sin</view>
+      <view class="item" bindtap="clickBtn" id="{{idcos}}">cos</view>
+      <view class="item" bindtap="clickBtn" id="{{idtan}}">tan</view>
+    </view>
     <view class="btnGroup">
       <view class="item orange" bindtap="clickBtn" id="{{idc}}">清空</view>
       <view class="item" bindtap="clickBtn" id="{{idd}}">DEL</view>

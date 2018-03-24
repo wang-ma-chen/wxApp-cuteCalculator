@@ -30,12 +30,30 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 1,
 			"list": [
 				{
 					"id": -1,
 					"name": "进制",
 					"pathName": "pages/conversion/conversion",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": 2,
+					"name": "function",
+					"pathName": "pages/function/function",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "税",
+					"pathName": "pages/personalTax/personalTax",
 					"query": ""
 				}
 			]

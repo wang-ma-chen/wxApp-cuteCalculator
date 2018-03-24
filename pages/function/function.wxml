@@ -5,7 +5,7 @@
     <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">健康</view>  
 </view>  
   
-<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">  
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight -31}}px" bindchange="bindChange">  
     <swiper-item>  
       <view class="part">
         <view class="fct left">
@@ -55,7 +55,7 @@
           </navigator>
         </view> 
         <view class="fct right">
-          <navigator url="details/details">
+          <navigator url="../personalTax/personalTax">
             <image src="/images/tax.png"></image>
             <view>个人所得税</view>
           </navigator>

@@ -90,10 +90,10 @@ Page({
     var up = parseFloat(this.data.upperChest);
     var low = parseFloat(this.data.lowerChest);
     var up_max = low + 25.0;
-    if (up < 68 || up > 92 || low >= up || up > up_max) {
+    if (up < 60 || up > 92 || low >= up || up > up_max) {
       wx.showModal({
         title: '提示',
-        content: '请输入正确数据'+up + low,
+        content: '数据不合理\n请输入正确数据',
         showCancel:false,
         success: function (res) {
           if (res.confirm) {
@@ -145,8 +145,8 @@ Page({
       this.setData({
         braSize: braSize,
       });
-    // this.data.logs.push(this.data.date1 + "--" + this.data.date2 + "  " + day_num + "天");
-    // wx.setStorageSync("logs", this.data.logs);
+    this.data.logs.push(low + "--" +up+ "  " +braSize);
+    wx.setStorageSync("logs", this.data.logs);
     }
   }
 })

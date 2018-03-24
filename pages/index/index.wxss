@@ -7,24 +7,37 @@
 
 .layout-top {
   width: 100%;
-  height:45%;
+  height:50%;
   align-self: flex-start;
   text-align: right;
-  display: flex;
 }
-
+.icon{
+  height:15%;
+  width:100%;
+  background-color: #eee;
+}
+.icon image{
+  position:absolute;
+  top:15rpx;
+  right:15rpx;
+  height:60rpx;
+  width:60rpx;
+}
 .screen {
   width: 100%;
-  align-self: flex-end;
-  font-size: 30px;
+  position:absolute;
+  bottom:50%;
+  z-index:-1;
+  font-size: 70rpx;
   word-break: break-all;
+  overflow: hidden;
 }
 .doneData{
   border-bottom: #569597 dashed 1px;
 }
 .layout-bottom {
   width: 100%;
-  height:55%;
+  height:50%;
   align-self: flex-end;
   display: flex;
   flex-direction: column;

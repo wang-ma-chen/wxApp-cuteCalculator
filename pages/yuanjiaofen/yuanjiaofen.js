@@ -56,8 +56,14 @@ Page({
   bindInputNum(e) {
     clearTimeout(this.data.timeoutHandler)
     let lastChar = e.target.dataset.kw
+    console.log(lastChar);
     let oldStr = this.data.numStr
     let newStr = updateInput(lastChar, oldStr)
+    console.log(newStr);
+    if (Number(newStr+"1")<0.01){
+      this.alert();
+      return;
+    }
     this.setData({
       numStr: newStr
     })
@@ -309,5 +315,13 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  alert: function () {
+    wx.showModal({
+      title: '',
+      content: '不能小于0.01',
+      confirmColor: '#29bbb4',
+      showCancel:false,
+    })
+  },
 })

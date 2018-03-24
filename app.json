@@ -9,7 +9,9 @@
     "pages/birthday/birthday",
     "pages/brasize/brasize",
     "pages/conversion/conversion",
-    "pages/yuanjiaofen/yuanjiaofen"
+    "pages/yuanjiaofen/yuanjiaofen",
+    "pages/personalTax/personalTax",
+    "pages/TaxResult/TaxResult"
   ],
   "window":{
     "backgroundTextStyle":"light",
