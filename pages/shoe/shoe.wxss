@@ -1,0 +1,87 @@
+/* pages/shoe/shoe.wxss */
+page{
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  font-size: 30rpx;
+}
+
+.container{
+  height: 100%;
+}
+
+.page__hd{
+    height:10%;
+    width: 100%;
+    text-align: center;
+}
+
+.page_body{
+  display: flex;
+  flex-direction: column;
+  height:90%;
+  width: 100%;
+}
+
+.page__title{
+    display: inline-block;
+    padding: 30rpx 60rpx 10rpx 60rpx;
+    font-size: 30rpx;
+    color: #777777;
+    border-bottom: 1px solid  #777777;
+}
+
+.section__title{
+    background-color:#569597; 
+    color:white;
+    text-align: center;
+    border-radius: 3px;
+    margin: 15rpx 2rpx 15rpx 2rpx;
+    padding: 5rpx 30rpx 5rpx 30rpx;
+} 
+
+image{
+  float: right;
+  height: 20px;
+  width: 20px;
+}
+
+.picker{
+  border-radius: 3px;
+  margin: 15rpx 2rpx 15rpx 2rpx;
+  padding: 26rpx;
+  background-color: #f5f5f5;
+  border:#569597 solid 1px;
+}
+
+.halfpicker_container{
+  margin: 15rpx 0 15rpx 0;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.halfpicker{
+  width: 50%;
+}
+
+.half_picker{
+  margin: 0 2rpx 0 2rpx;
+  border-radius: 3px;
+  background-color: #f5f5f5;
+  padding: 26rpx;
+  border:#569597 solid 1px;  
+}
+
+.startCal{
+  align-self: flex-end;
+  width: 90%;
+  color: white;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  margin:30rpx auto; 
+  border-radius: 6rpx;
+  background-color:#569597; 
+  box-sizing: border-box;
+}

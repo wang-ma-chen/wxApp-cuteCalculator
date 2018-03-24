@@ -1,0 +1,28 @@
+<!--pages/ringsize/ringsize.wxml-->
+<view class='container'>
+    <view class="page__hd">
+      <text class="page__title">请输入...</text>
+    </view>
+    <view class="page_body">
+      <view class="section">
+        <view class="section__title">指围周长（mm）</view>
+        <input class="input" type='digit' confirm-type='done'  placeholder='请在此处输入指围' bindblur='getCir'> 
+        </input>
+      </view>
+      <view >
+        <view class="section__title">所属国家</view>
+        <picker value="{{countryPickerValue}}" range="{{countryList}}" isShow="{  {countryPickerIsShow}}" bindchange="countryPickerOnSureClick" bindtouchcancel="countryPickerOnCancelClick">
+          <view class="picker">
+            当前选择：{{countryList[countryPickerValue]}}
+            <image  src="/images/more.png"></image>
+          </view>
+        </picker>
+      </view>
+      <view class="section result">
+        <view wx:if="{{ringSize!=null}}">
+          戒指尺号为：{{ringSize}}
+        </view>
+      </view>
+      <view class="startCal" bindtap="process">计算</view>
+    </view>
+</view>
