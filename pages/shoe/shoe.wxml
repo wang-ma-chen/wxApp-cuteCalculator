@@ -30,7 +30,7 @@
         </view>
         <view wx:if="{{shoeTypePickerValue == 1}}">
           <view class="picker">
-            脚长：{{lengthList_male[inputPickerValue]}}
+            脚长：{{lengthList_female[inputPickerValue]}}
             <image  src="/images/more.png"></image>
           </view>
         </view>
@@ -126,5 +126,6 @@
           </view>
         </picker>
       </view>
+      <view class="wtf" bindtap="save">保存</view>
     </view>
 </view>

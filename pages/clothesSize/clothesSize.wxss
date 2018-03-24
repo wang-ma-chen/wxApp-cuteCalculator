@@ -1,4 +1,4 @@
-/* pages/ringsize/ringsize.wxss */
+/* pages/shoe/shoe.wxss */
 page{
   height: 100%;
   width: 100%;
@@ -15,6 +15,7 @@ page{
     width: 100%;
     text-align: center;
 }
+
 .page_body{
   display: flex;
   flex-direction: column;
@@ -30,58 +31,62 @@ page{
     border-bottom: 1px solid  #777777;
 }
 
- .section__title{
+.section__title{
     background-color:#569597; 
     color:white;
     text-align: center;
     border-radius: 3px;
-    margin: 15rpx 2px 16rpx 2px;
-    padding: 5px 30rpx;
-}  
-
-.input{
-  border-radius: 3px;
-  margin: 0 2px 0 2px;
-  padding: 26rpx;
-  background-color: white;
-  box-shadow: 4rpx 4rpx 4rpx #ccc;
-}
+    margin: 15rpx 10rpx 15rpx 10rpx;
+    padding: 5rpx 30rpx 5rpx 30rpx;
+} 
 
 image{
   float: right;
   height: 20px;
   width: 20px;
 }
-
-.picker{
+.input{
   border-radius: 3px;
-  margin: 0 2px 0 2px;
+  margin: 0 10rpx 0 10rpx;
+  padding: 20rpx;
+  background-color: white;
+  box-shadow: 4rpx 4rpx 4rpx #ccc;
+}
+
+.result_pannel{
+  margin: 15rpx 0 5rpx 0;
+  align-items: center;
+  display:flex;
+  justify-content: space-around;
+}
+
+.result{
+  width:46%;
+  border-radius: 3px;
+  margin: 15rpx 2rpx 5rpx 2rpx;
   padding: 26rpx;
   background-color: white;
   box-shadow: 4rpx 4rpx 4rpx #ccc;
 }
 
-.result{
-  flex: 2;
-  text-align: center;
-  font-size: 40rpx;
-}
-.result view{
-  margin: 30rpx 10rpx;
-  padding-top: 20rpx;
-  padding-bottom: 20rpx;
-  background-color: white;
-  box-shadow: 4rpx 4rpx 4rpx #ccc;
-}
-.startCal{
-  align-self: flex-end;
-  width: 90%;
-  color: white;
+.wtf{
+  display: inline-block;
+  position: absolute;
+  bottom: 200rpx;
+  width: 40%;
   height: 80rpx;
   line-height: 80rpx;
   text-align: center;
-  margin:30rpx auto; 
   border-radius: 6rpx;
-  background-color:#569597; 
   box-sizing: border-box;
+}
+.left{
+  left:5%;
+  box-shadow: 4rpx 4rpx 4rpx #ccc;
+  background-color:white; 
+}
+.right{
+  right:5%;
+   color: white;
+  background-color:#569597; 
 }

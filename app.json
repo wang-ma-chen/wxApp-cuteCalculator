@@ -11,11 +11,10 @@
     "pages/conversion/conversion",
     "pages/yuanjiaofen/yuanjiaofen",
     "pages/personalTax/personalTax",
-    "pages/TaxResult/TaxResult"
-=======
+    "pages/TaxResult/TaxResult",
     "pages/shoe/shoe",
-    "pages/ringsize/ringsize"
->>>>>>> fde2491d11ebe08adfec2c80086d74f5b7f6e9f7
+    "pages/ringsize/ringsize",
+    "pages/clothesSize/clothesSize"
   ],
   "window":{
     "backgroundTextStyle":"light",

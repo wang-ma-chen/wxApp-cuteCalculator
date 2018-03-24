@@ -62,7 +62,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var logs = wx.getStorageSync('logs') || [];
+    this.setData({ "logs": logs });
   },
 
   /**
@@ -176,33 +177,27 @@ Page({
   },
 
   keyInput:function(e){
-    // switch (e.currentTarget.id){
-    //   case 0:
-    //     this.setData({
-    //       lengthPickerIsShow: false,
-    //     });
-    //   case 1:
-    //     this.setData({
-    //       chinaPickerIsShow: false,
-    //     });
-    //   case 2:
-    //     this.setData({
-    //       europePickerIsShow: false,
-    //     });
-    //   case 3:
-    //     this.setData({
-    //       ukPickerIsShow: false,
-    //     });
-    //   case 4:
-    //     this.setData({
-    //       usaPickerIsShow: false,
-    //     });
-    // }
     this.setData({
       inputPickerValue: e.detail.value,
       inputPickerIsShow: false,
       inputPickerIsSelected: true,
     });
+  },
+  save:function(){
+    if (this.data.shoeTypePickerValue == 0) {
+      this.data.logs.push("男鞋   " + this.data.lengthList_male[this.data.inputPickerValue] + "cm\n中国：" + this.data.chinaTypeList_male[this.data.inputPickerValue] + "   欧洲：" + this.data.europeTypeList_male[this.data.inputPickerValue] + "\n英国：" + this.data.ukTypeList_male[this.data.inputPickerValue] + "   美国：" + this.data.usaTypeList_male[this.data.inputPickerValue]);
+      wx.setStorageSync("logs", this.data.logs);
+    }
+    else if (this.data.shoeTypePickerValue == 1) {
+      this.data.logs.push("女鞋   " + this.data.lengthList_female[this.data.inputPickerValue] + "cm\n中国：" + this.data.chinaTypeList_female[this.data.inputPickerValue] + "   欧洲：" + this.data.europeTypeList_female[this.data.inputPickerValue] + "\n英国" + this.data.ukTypeList_female[this.data.inputPickerValue] + "   美国：" + this.data.usaTypeList_female[this.data.inputPickerValue]);
+      wx.setStorageSync("logs", this.data.logs);
+    }
+    else return;
+    wx.showModal({
+      title: '',
+      content: '已保存',
+      confirmColor: '#29bbb4',
+      showCancel: false,
+    });
   }
-
 })

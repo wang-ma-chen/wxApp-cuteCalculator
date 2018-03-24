@@ -80,7 +80,7 @@ Page({
         num: numStr,
         chn: chnStr
       }
-      this.data.logs.push(numStr+">>"+chnStr);
+      this.data.logs.push(numStr+"\n"+chnStr);
       wx.setStorageSync("logs", this.data.logs);
       this.data.resultList.unshift(oneLine);
       this.setData({

@@ -175,7 +175,7 @@ Page({
      var solar = converter.LunarToSolar(lunar);
      this.setData({ cvt_date:`${solar.solarYear}年${solar.solarMonth}月${solar.solarDay}日`})
    }
-   this.data.logs.push(this.data.date+">>"+this.data.cvt_date);
+   this.data.logs.push(this.data.date+"\n"+this.data.cvt_date);
    wx.setStorageSync("logs",this.data.logs);
  }
 })

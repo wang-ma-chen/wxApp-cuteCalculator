@@ -126,8 +126,14 @@ Page({
     })
   },
   save:function(){
-    this.data.logs.push(this.data.decimal + ">>" + this.data.twoadecimal + ">>" + this.data.eightadecimal + ">>" + this.data.hexadecimal);
+    this.data.logs.push(this.data.decimal + ">>" + this.data.twoadecimal + "\n>>" + this.data.eightadecimal + ">>" + this.data.hexadecimal);
     wx.setStorageSync("logs", this.data.logs);
+    wx.showModal({
+      title: '',
+      content: '已保存',
+      confirmColor: '#29bbb4',
+      showCancel: false,
+    })
   },
   /**
    * 生命周期函数--监听页面加载

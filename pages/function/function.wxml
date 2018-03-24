@@ -72,9 +72,9 @@
           </navigator>
         </view> 
         <view class="fct right">
-          <navigator url="details/details">
-            <image src="/images/dress.png"></image>
-            <view>女装尺码</view>
+          <navigator url="../clothesSize/clothesSize">
+            <image src="/images/clothes.png"></image>
+            <view>服装尺码</view>
           </navigator>
         </view> 
       </view>
@@ -86,19 +86,11 @@
           </navigator>
         </view> 
         <view class="fct right">
-          <navigator url="details/details">
-            <image src="/images/skirt.png"></image>
-            <view>男装尺码</view>
-          </navigator>
-        </view> 
-      </view>
-      <view class="part">
-        <view class="fct left">
           <navigator url="../ringsize/ringsize">
             <image src="/images/ring.png"></image>
             <view>戒指尺码</view>
           </navigator>
-        </view>  
+        </view> 
       </view>
     </swiper-item> 
 

@@ -123,7 +123,7 @@ Page({
     this.setData({
       day_num:day_num,
     });
-    this.data.logs.push(this.data.date1 + "--" + this.data.date2 +"  "+day_num+"天");
+    this.data.logs.push(this.data.date1 + "--" + this.data.date2 +"\n"+day_num+"天");
     wx.setStorageSync("logs", this.data.logs);
   }
 })

@@ -97,7 +97,7 @@ Page({
     }
     var date = new Date(this.data.datePickerValue[0], this.data.datePickerValue[1]-1, this.data.datePickerValue[2], this.data.datePickerValue[3]);
     this.setData({bazi:util.horoscope(date)});
-    this.data.logs.push(this.data.date +'' + this.data.bazi);
+    this.data.logs.push(this.data.date +"\n" + this.data.bazi);
     wx.setStorageSync("logs", this.data.logs);
   }
 })

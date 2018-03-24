@@ -27,12 +27,11 @@ Page({
     Data:['0'],
     screenData:"0",
     operaSymbo: { "＋": "+", "-": "-", "×": "*", "÷": "/", ".": "."},
-    special:{"ln":"ln","cos":"cos","sin":"sin","tan":"tan"},
+    triangle:{"cos":"cos","sin":"sin","tan":"tan"},
     done:[],
-    flag:false,
     lastIsOperaSymbo: false,
-    lastIsSpecial:false,
-    complete:false,
+    lastIsTriangle:false,
+    lastIsLn:false,
     arr: [],
     divF:false,
     alertF:false,
@@ -84,13 +83,19 @@ Page({
       return;
     }
     var temp=this.data.arr.pop();
-    if(temp=="ln"||temp=="cos"||temp=="sin"||temp=="tan"){
+    if(temp=="cos"||temp=="sin"||temp=="tan"){
       this.data.triangleF=0;
+      this.data.lastIsTriangle = false;
     }
+    else if (temp == "ln") this.data.lastIsLn = false;
+    else if (this.data.operaSymbo[temp]) this.data.lastIsOperaSymbo = false;
     var temp = this.data.arr[this.data.arr.length - 1];
-    if (temp == "ln" || temp == "cos" || temp == "sin" || temp == "tan"){
+    if (temp == "cos" || temp == "sin" || temp == "tan"){
       this.data.triangleF = 1;
+      this.data.lastIsTriangle = true;
     }
+    else if (temp == "ln") this.data.lastIsLn = true;
+    else if (this.data.operaSymbo[temp]) this.data.lastIsOperaSymbo = true;
     this.upDateScreen();
     if (this.data.screenData == "" || this.data.screenData == "-") {
       this.data.start = true;
@@ -106,6 +111,9 @@ Page({
     this.data.alertF = false;
     this.data.triangleF=0;
     this.data.start=true;
+    this.data.lastIsOperaSymbo=false,
+    this.data.lastIsTriangle=false,
+    this.data.lastIsLn=false
   },
  getANum:function(arr,i){
    var num = "";
@@ -129,7 +137,7 @@ Page({
     if (isNaN(lastWord)) {
       this.error(); return;
     }
-    var num = "1";
+    var num = "0";
     var _num;
     var arr = this.data.arr;
     var optarr = [];
@@ -221,19 +229,18 @@ Page({
     this.setData({ "screenData": result + "" });
     this.data.start=true;
     this.setData({ "done": this.data.done });
-    this.setData({ "complete": true });
   },
   other:function(id){
     if (this.data.alertF == true) {
       this.error(); return;
     }
     if (this.data.operaSymbo[id] || id == "%") { //如果是符号+-*/
-      if (this.data.lastIsOperaSymbo||this.data.lastIsSpecial) {
+      if (this.data.lastIsOperaSymbo || this.data.lastIsTriangle || this.data.lastIsLn) {
         this.error(); return;
       }
     }
-    if(this.data.special[id]){
-        if(this.lastIsSpecial){
+    if(this.data.triangle[id]||id=="ln"){
+      if (this.data.lastIsTriangle || this.data.lastIsLn){
             this.error(); return;}
         if (!isNaN(this.data.arr[this.data.arr.length - 1])){
           this.data.screenData +="×";
@@ -244,10 +251,12 @@ Page({
     var start = this.data.start;
     var sd=this.data.screenData;
     var data;
-    if(sd=="0"||(start&&sd!=0&&!this.data.operaSymbo[id]&&id!="%")){
+    if((sd=="0"&&id!="x"&&id!="÷"&&id!="%")||(start&&sd!=0&&!this.data.operaSymbo[id]&&id!="%")){
       data = id;
-      if (this.data.special[id]) this.lastIsSpecial=true;
+      if (this.data.triangle[id]) this.lastIsTriangle=true;
+      if (id=="ln") this.lastIsLn = true;
       this.setData({ divF: false });
+      this.data.arr.length = 0;
     }
     else{
       if (this.data.arr[this.data.arr.length-1]=="%"&&!isNaN(id)){
@@ -275,7 +284,7 @@ Page({
     }
     this.data.start=false;
     this.setData({ "screenData": data });
-    if (this.data.special[id] && id != "ln") this.setData({ triangleF:1 });
+    if (this.data.triangle[id]) this.setData({ triangleF:1 });
     this.data.arr.push(id);
     if (this.data.operaSymbo[id]) {
       this.setData({ "lastIsOperaSymbo": true });
@@ -283,11 +292,17 @@ Page({
     else {
       this.setData({ "lastIsOperaSymbo": false });
     }
-    if (this.data.special[id]) {
-      this.setData({ "lastIsSpecial": true });
+    if (this.data.triangle[id]) {
+      this.setData({ "lastIsTriangle": true });
     }
     else {
-      this.setData({ "lastIsSpecial": false });
+      this.setData({ "lastIsTriangle": false });
+    }
+    if (id=="ln") {
+      this.setData({ "lastIsLn": true });
+    }
+    else {
+      this.setData({ "lastIsLn": false });
     }
   },
   compare:function(firstOperator, secondOperator) {

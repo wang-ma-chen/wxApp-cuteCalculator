@@ -1,0 +1,45 @@
+<!--pages/shoe/shoe.wxml-->
+<view class='container'>
+
+    <view class="page__hd">
+      <text class="page__title">请选择...</text>
+    </view>
+
+    <view class="page_body">
+    <view class="section">
+      <view class="section__title">胸围（cm）</view>
+      <input class="input" type='number' confirm-type='done' value="{{bust}}" placeholder='请在此处输入胸围(例:80)' bindblur='getBust'>
+      </input>
+    </view>
+    <view class="section">
+      <view class="section__title">腰围（cm）</view>
+      <input class="input" type='digit' confirm-type='done' value="{{waist}}"adjust-position='true' placeholder='请在此处输入腰围(例：62)' bindblur='getWaist'>
+      </input>
+    </view>
+    <view class="section">
+      <view class="section__title">臀围（cm）</view>
+      <input class="input" type='digit' confirm-type='done'value="{{hip}}" adjust-position='true' placeholder='请在此处输入臀围(例：87)' bindblur='getHip'>
+      </input>
+    </view>
+      <view class="result_pannel">
+
+        <view class="result" id="1">
+              国际：{{globalSize}}
+        </view>
+
+        <view class="result" id="1">
+              中国：{{chinaSize}}
+        </view>
+      </view>
+      <view class="result_pannel">
+        <view class='result' id='1'>
+              欧洲：{{ukSize}}
+        </view>
+        <view class='result' id='1'>
+              美国：{{usaSize}}
+        </view>
+      </view>
+      <view class="wtf left" bindtap='emptied' >清空</view> 
+      <view class="wtf right" bindtap='process' >计算</view> 
+    </view>
+</view>

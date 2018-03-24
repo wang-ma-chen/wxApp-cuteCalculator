@@ -2,7 +2,7 @@
 page{
   height: 100%;
   width: 100%;
-  background-color: #fff;
+  background-color: #eee;
   font-size: 30rpx;
 }
 
@@ -50,8 +50,8 @@ image{
   border-radius: 3px;
   margin: 15rpx 2rpx 15rpx 2rpx;
   padding: 26rpx;
-  background-color: #f5f5f5;
-  border:#569597 solid 1px;
+  background-color: white;
+  box-shadow: 4rpx 4rpx 4rpx #ccc;
 }
 
 .halfpicker_container{
@@ -64,23 +64,16 @@ image{
 .halfpicker{
   width: 50%;
 }
-
-.half_picker{
-  margin: 0 2rpx 0 2rpx;
-  border-radius: 3px;
-  background-color: #f5f5f5;
-  padding: 26rpx;
-  border:#569597 solid 1px;  
-}
-
-.startCal{
-  align-self: flex-end;
+.wtf{
+  display: inline-block;
+  position: absolute;
+  bottom: 300rpx;
+  left:5%;
   width: 90%;
   color: white;
   height: 80rpx;
   line-height: 80rpx;
   text-align: center;
-  margin:30rpx auto; 
   border-radius: 6rpx;
   background-color:#569597; 
   box-sizing: border-box;

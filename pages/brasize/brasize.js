@@ -145,7 +145,7 @@ Page({
       this.setData({
         braSize: braSize,
       });
-    this.data.logs.push(low + "--" +up+ "  " +braSize);
+    this.data.logs.push(low + "--" +up+ "\n" +braSize);
     wx.setStorageSync("logs", this.data.logs);
     }
   }

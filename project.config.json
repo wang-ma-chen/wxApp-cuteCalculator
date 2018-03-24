@@ -55,6 +55,24 @@
 					"name": "税",
 					"pathName": "pages/personalTax/personalTax",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "shoe",
+					"pathName": "pages/shoe/shoe",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "clothes",
+					"pathName": "pages/clothesSize/clothesSize",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "history",
+					"pathName": "pages/history/history",
+					"query": ""
 				}
 			]
 		}
