@@ -75,9 +75,7 @@ Page({
 
   del:function(){       //del
     if (this.data.alertF == true){
-      this.setData({ "screenData": "0" });
-      this.data.arr.length = 0;
-      this.data.alertF = false;
+      this.clear();
     }
     if (this.data.screenData == "0") {
       return;
@@ -130,13 +128,14 @@ Page({
  },
   equal:function(){
     var data = this.data.screenData;
-    if (data == "0" || this.data.lastIsOperaSymbo||this.data.lastIsSpecial || this.data.alertF) {
+    if (data == "0" || this.data.lastIsOperaSymbo||this.data.lastIsTriangle||this.data.lastIsLn || this.data.alertF) {
       this.error(); return;
     }
     var lastWord = data.charAt(data.length);
     if (isNaN(lastWord)) {
       this.error(); return;
     }
+    this.data.triangleF=0;
     var num = "0";
     var _num;
     var arr = this.data.arr;
@@ -251,7 +250,7 @@ Page({
     var start = this.data.start;
     var sd=this.data.screenData;
     var data;
-    if((sd=="0"&&id!="x"&&id!="÷"&&id!="%")||(start&&sd!=0&&!this.data.operaSymbo[id]&&id!="%")){
+    if ((Number(sd) == 0 && id != "×"&&id!="÷"&&id!="%")||(start&&Number(sd)==0&&!this.data.operaSymbo[id]&&id!="%")){
       data = id;
       if (this.data.triangle[id]) this.lastIsTriangle=true;
       if (id=="ln") this.lastIsLn = true;
@@ -273,7 +272,7 @@ Page({
         this.setData({ alertF: true });
         return;
       }
-      if (!this.data.triangleF ==0){
+      if (this.data.triangleF !=0){
         if (this.data.triangleF ==1) {
           var data = sd+ id + "°";
           this.data.triangleF=2;
