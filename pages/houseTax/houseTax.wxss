@@ -1,0 +1,126 @@
+/* pages/houseTax/houseTax.wxss */
+page{
+  height: 100%;
+  width: 100%;
+  background-color: #eee;
+  font-size: 30rpx;
+}
+
+.container{
+  height: 100%;
+}
+
+.page__hd{
+    height:7%;
+    width: 100%;
+    text-align: center;
+}
+
+.page_body{
+  display: flex;
+  flex-direction: column; 
+  height:93%;
+  width: 100%;
+}
+
+.page_result{
+  display: flex;
+  flex-direction: column; 
+  height:100%; 
+  width: 100%;
+}
+
+.page_tail{
+  height:10%;
+  width: 100%;
+  text-align: center;
+  align-self: flex-end;
+} 
+
+.page__title{
+    display: inline-block;
+    padding: 30rpx 60rpx 10rpx 60rpx;
+    font-size: 30rpx;
+    color: #777777;
+    border-bottom: 1px solid  #777777;
+}
+
+.input_container{
+  margin: 15rpx 2rpx 15rpx 2rpx;
+  width: 100%;
+  background-color: #569597;
+}
+
+.section__title__half{
+    background-color:#569597; 
+    color:white;
+    text-align: center;
+    border-radius: 3px;
+    width: 50%;
+     margin: 15rpx 2rpx 15rpx 2rpx; 
+    padding: 5rpx 30rpx 5rpx 30rpx;
+} 
+
+.section__title{
+    background-color:#569597; 
+    color:white;
+    text-align: center;
+    border-radius: 3px;
+    margin: 15rpx 2rpx 15rpx 2rpx; 
+    padding: 5rpx 30rpx 5rpx 30rpx;
+} 
+
+.input{
+  border-radius: 3px;
+   margin: 0 2px 0 2px; 
+  padding: 26rpx;
+  background-color: white;
+  box-shadow: 4rpx 4rpx 4rpx #ccc;
+}
+
+image{
+  float: right;
+  height: 20px;
+  width: 20px;
+}
+
+.picker{
+  border-radius: 3px;
+  margin: 15rpx 2rpx 15rpx 2rpx;
+  padding: 26rpx;
+  background-color: white;
+  box-shadow: 4rpx 4rpx 4rpx #ccc;
+}
+
+.outputView{
+  height: 70%;
+  width: 100%;
+  padding: 20rpx 0 20rpx 0;
+}
+
+.buttonView{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.resultView{
+  border-radius: 3px;
+  margin: 0 2px 0 2px; 
+  padding: 26rpx;
+  background-color: white;
+  box-shadow: 4rpx 4rpx 4rpx #ccc;
+  text-align: center;
+}
+
+.startCal{
+  width: 90%;
+  color: white;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  margin:30rpx auto; 
+  border-radius: 6rpx;
+  background-color:#569597; 
+  box-sizing: border-box;
+}

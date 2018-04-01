@@ -1,0 +1,23 @@
+<view class='container'>
+    <view class="page__hd">
+      <text class="page__title">请输入...</text>
+    </view>
+    <view class="page_body">
+    <view class="section">
+      <view class="section__title">请输入身高（单位：cm）</view>
+      <input class="input" type='digit' confirm-type='done'  maxlength="4"  value="{{height}}"placeholder='请在此处输入身高(不超过210cm)' bindblur='getHeight'>
+      </input>
+    </view>
+    <view class="section">
+      <view class="section__title">请输入体重（单位：kg）</view>
+      <input class="input" type='digit' confirm-type='done' adjust-position='true' value="{{weight}}" placeholder='请在此处输入体重(不超过200kg)' bindblur='getWeight'>
+      </input>
+    </view>
+    <view class="section result">
+     <view wx:if="{{result!=null}}">
+      {{result}}
+     </view>
+    </view>
+    <view class="startCal" bindtap="process">计算</view>
+  </view>
+</view>

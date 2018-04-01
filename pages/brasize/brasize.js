@@ -84,7 +84,17 @@ Page({
    * 尺码计算处理过程
    */
   process: function () {
-    if (this.data.upperChest == null || this.data.lowerChest == null ) {
+    if (this.data.upperChest =='' || this.data.lowerChest == '' ) {
+      wx.showModal({
+        title: '提示',
+        content: '请输入完整数据',
+        showCancel: false,
+        success: function (res) {
+          if (res.confirm) {
+            return;
+          }
+        }
+      })
       return;
     }
     var up = parseFloat(this.data.upperChest);

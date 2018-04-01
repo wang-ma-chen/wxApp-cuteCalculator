@@ -1,0 +1,38 @@
+<!--pages/shoe/shoe.wxml-->
+<view class='container'>
+
+    <view class="page__hd">
+      <text class="page__title">请选择...</text>
+    </view>
+
+    <view class="page_body">
+      <view class="section">
+        <view class="section__title">性别</view>
+        <picker value="{{index}}" range="{{sex}}" bindchange="bindPickerChange" >
+          <view class="picker">
+            当前选择：{{sex[index]}}
+            <image  src="/images/more.png"></image>
+          </view>
+        </picker>
+      </view>
+      <view class="section">
+        <view class="section__title">年龄（岁）</view>
+        <input class="input" type='number' confirm-type='done' value="{{age}}" placeholder='请在此处输入年龄' bindblur='getAge'>
+        </input>
+      </view>
+      <view class="section">
+        <view class="section__title">身高（cm）</view>
+        <input class="input" type='digit' confirm-type='done' value="{{height}}"adjust-position='true' placeholder='请在此处输入身高(不超过210cm)' bindblur='getHeight'>
+        </input>
+      </view>
+      <view class="section">
+        <view class="section__title">体重（kg）</view>
+        <input class="input" type='digit' confirm-type='done'value="{{weight}}" adjust-position='true' placeholder='请在此处输入体重(不超过200kg)' bindblur='getWeight'>
+        </input>
+      </view>
+    <view class="section result" wx:if="{{result!=null}}">
+      {{result}}
+    </view>
+      <view class="startCal" bindtap="process">计算</view>
+    </view>
+</view>

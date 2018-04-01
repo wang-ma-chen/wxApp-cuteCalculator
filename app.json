@@ -14,7 +14,10 @@
     "pages/TaxResult/TaxResult",
     "pages/shoe/shoe",
     "pages/ringsize/ringsize",
-    "pages/clothesSize/clothesSize"
+    "pages/clothesSize/clothesSize",
+    "pages/bmi/bmi",
+    "pages/bmr/bmr",
+    "pages/houseTax/houseTax"
   ],
   "window":{
     "backgroundTextStyle":"light",

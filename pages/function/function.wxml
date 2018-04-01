@@ -49,7 +49,7 @@
       </view>   
       <view class="part">
         <view class="fct left">
-          <navigator url="details/details">
+          <navigator url="../houseTax/houseTax">
             <image src="/images/house.png"></image>
             <view>房贷计算</view>
           </navigator>
@@ -97,13 +97,13 @@
     <swiper-item>  
       <view class="part">
         <view class="fct left">
-          <navigator url="details/details">
+          <navigator url="../bmi/bmi">
             <image src="/images/weight.png"></image>
             <view>体重BMI</view>
           </navigator>
         </view> 
         <view class="fct right">
-          <navigator url="details/details">
+          <navigator url="../bmr/bmr">
             <image src="/images/people.png"></image>
             <view>基础代谢率</view>
           </navigator>

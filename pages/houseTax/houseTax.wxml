@@ -1,0 +1,97 @@
+<!--pages/houseTax/houseTax.wxml-->
+<view class='container'>
+
+    <view class="page__hd"  wx:if="{{inputPageIsShow == true}}" >
+    <text class="page__title">请输入...</text>
+    </view>
+
+  <view class='page_body' wx:if="{{inputPageIsShow == true}}">
+
+    <view class="section__title">贷款期限</view>
+    <picker value="{{loanDateValue}}" range="{{loanDateList}}" bindchange="pickerOnSureClick"  id= '1' >
+      <view class="picker">
+        当前选择：{{loanDateList[loanDateValue]}}
+        <image  src="/images/more.png"></image>
+      </view>
+    </picker>
+
+    
+    <view class="section__title">贷款金额（万元）</view>
+      <input class="input" type='digit' confirm-type='done' bindblur='getInput' id='12'>
+      </input> 
+      <view class="section__title">贷款利率（%）</view>
+      <input class="input" type='digit' confirm-type='done' bindblur='getInput' id='13'>
+      </input>  
+
+       <!-- <view class="section__title">公积金贷款期限</view>
+    <picker value="{{fLoanDateValue}}" range="{{loanDateList}}" bindchange="pickerOnSureClick"  id='21'>
+      <view class="picker">
+        当前选择：{{loanDateList[fLoanDateValue]}}
+        <image  src="/images/more.png"></image>
+      </view>
+    </picker>
+
+    <view class="section__title">公积金贷款金额（万元）</view>
+    <input class="input" type='digit' confirm-type='done' bindblur='getInput' id='22'>
+    </input>
+    <view class="section__title">公积金贷款利率（%）</view>
+    <input class="input" type='digit' confirm-type='done' bindblur='getInput' id='23'>
+    </input> -->
+
+     <view class="section__title">还款方式</view>
+    <picker value="{{repayTypeValue}}" range="{{repayTypeList}}" bindchange="pickerOnSureClick"  id='3'>
+      <view class="picker">
+        当前选择：{{repayTypeList[repayTypeValue]}}
+        <image  src="/images/more.png"></image>
+      </view>
+    </picker> 
+    <view class="startCal" bindtap="process">计算</view>
+  </view>  
+
+  <view class='page_result' wx:if="{{outputPageIsShow == true}}">
+    <view class="page__hd" >
+      <text class="page__title">计算结果</text>
+    </view>
+
+    <view class='resultView' wx:if="{{repayTypeValue == 0}}">
+      <view class='outputView'>
+        贷款总额：{{totalLoan}}元
+      </view>
+      <view class='outputView'>
+          还款月数：{{totalMonth}}个月
+      </view>
+      <view class='outputView'>
+          首月还款：{{firstRepay}}元
+      </view>
+      <view class='outputView'>
+          总支付利息：{{totalInterest}}元
+      </view>
+      <view class='outputView'>
+          本息合计：{{totalRepay}}元
+      </view>
+    </view>
+
+    <view class='resultView' wx:if="{{repayTypeValue == 1}}">
+      <view class='outputView'>
+        贷款总额：{{totalLoan}}元
+      </view>
+      <view class='outputView'>
+          还款月数：{{totalMonth}}个月
+      </view>
+      <view class='outputView'>
+          每月还款：{{monthRepay}}元
+      </view>
+      <view class='outputView'>
+          总支付利息：{{totalInterest}}元
+      </view>
+      <view class='outputView'>
+          本息合计：{{totalRepay}}元
+      </view>
+    </view>
+
+    
+    <view class="startCal"bindtap="save">保存</view>
+    <view class="startCal" bindtap="returnInputPage">返回</view>
+  </view>
+    
+</view>

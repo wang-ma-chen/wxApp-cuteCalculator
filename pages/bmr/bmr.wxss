@@ -1,0 +1,86 @@
+/* pages/shoe/shoe.wxss */
+page{
+  height: 100%;
+  width: 100%;
+  background-color: #eee;
+  font-size: 30rpx;
+}
+
+.container{
+  height: 100%;
+}
+
+.page__hd{
+    height:7%;
+    width: 100%;
+    text-align: center;
+}
+
+.page_body{
+  display: flex;
+  flex-direction: column;
+  height:93%;
+  width: 100%;
+}
+
+.page__title{
+    display: inline-block;
+    padding: 30rpx 60rpx 10rpx 60rpx;
+    font-size: 30rpx;
+    color: #777777;
+    border-bottom: 1px solid  #777777;
+}
+
+.section__title{
+    background-color:#569597; 
+    color:white;
+    text-align: center;
+    border-radius: 3px;
+    margin: 15rpx 10rpx 15rpx 10rpx;
+    padding: 5rpx 30rpx 5rpx 30rpx;
+} 
+
+image{
+  float: right;
+  height: 20px;
+  width: 20px;
+}
+.input,picker{
+  border-radius: 3px;
+  margin: 0 10rpx 0 10rpx;
+  padding: 20rpx;
+  background-color: white;
+  box-shadow: 4rpx 4rpx 4rpx #ccc;
+}
+
+.result_pannel{
+  margin: 15rpx 0 5rpx 0;
+  align-items: center;
+  display:flex;
+  justify-content: space-around;
+}
+
+.result{
+  font-size: 35rpx;
+  box-shadow: 4rpx 4rpx 4rpx #ccc;
+  margin:20rpx 25rpx;
+  padding:20rpx 20rpx;
+  background-color: white;
+  text-align: center;
+}
+
+.startCal{
+  display: inline-block;
+  position: absolute;
+  bottom: 50rpx;
+  left:5%;
+  right:5%;
+  width: 90%;
+  color: white;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 6rpx;
+  background-color:#569597; 
+  box-sizing: border-box;
+}

@@ -3,7 +3,7 @@ Page({
     idd: "delete",
     idc: "clear",
     idp: "%",
-    idadd: "＋",
+    idadd: "+",
     id9: "9",
     id8: "8",
     id7: "7",
@@ -26,7 +26,7 @@ Page({
     content: "",
     Data:['0'],
     screenData:"0",
-    operaSymbo: { "＋": "+", "-": "-", "×": "*", "÷": "/", ".": "."},
+    operaSymbo: { "+": "+", "-": "-", "×": "*", "÷": "/", ".": "."},
     triangle:{"cos":"cos","sin":"sin","tan":"tan"},
     done:[],
     lastIsOperaSymbo: false,
@@ -250,7 +250,7 @@ Page({
     var start = this.data.start;
     var sd=this.data.screenData;
     var data;
-    if ((Number(sd) == 0 && id != "×"&&id!="÷"&&id!="%")||(start&&Number(sd)==0&&!this.data.operaSymbo[id]&&id!="%")){
+    if ((Number(sd) == 0 && id != "×"&&id!="÷"&&id!="%")||(start&&Number(sd)!=0&&!this.data.operaSymbo[id]&&id!="%")){
       data = id;
       if (this.data.triangle[id]) this.lastIsTriangle=true;
       if (id=="ln") this.lastIsLn = true;
@@ -305,25 +305,31 @@ Page({
     }
   },
   compare:function(firstOperator, secondOperator) {
-    if (firstOperator==undefined)return(0);
     if(((firstOperator == "+") || (firstOperator == "-")) && ((secondOperator == "*") ||    (secondOperator == "/"))) {
   return -1; //第一个操作符的优先级较小
-} else if ((((firstOperator == "+") || (firstOperator == "-")) && ((secondOperator == "+") || (secondOperator == "-"))) || (
-  ((firstOperator == "*") || (firstOperator == "/")) && ((secondOperator == "*") || (secondOperator == "/")))) {
+} 
+else if ((((firstOperator == "+") || (firstOperator == "-")) && ((secondOperator == "+") || (secondOperator == "-"))) || (((firstOperator == "*") || (firstOperator == "/")) && ((secondOperator == "*") || (secondOperator == "/")))) {
   return 0; //二者具有相等的优先级
-} else {
+} 
+else {
   return 1; //第一个操作符的优先级较大
 }
 },
   turnReversePolish:function(expression) {
-    var i=0;//栈顶指针
+    console.log(expression);
+    var i=-1;//栈顶指针
     var opertator=[];
     var newArr=[];
     for(var k in expression){
       var temp = expression[k];
       if (!isNaN(temp))newArr.push(temp)
+      else if (isNaN(temp)&&i == -1) {
+        opertator.push(temp);
+        i++;
+      }
       else{
-        if(this.compare(opertator[i],temp)){
+        var result=this.compare(opertator[i], temp)
+        if (result == -1 || result==0){
           newArr.push(opertator.pop());
           opertator.push(temp);
         }
@@ -333,8 +339,8 @@ Page({
         }
       }  
     }
-    while(i>0){
-      newArr.push(opertator[--i]);
+    while(i>=0){
+      newArr.push(opertator[i--]);
     }
     return(newArr);
   },
